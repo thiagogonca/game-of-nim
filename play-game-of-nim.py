@@ -7,6 +7,8 @@
 #  Dois jogadores jogam  alternadamente, retirando pelo menos 1 e no máximo m peças cada um. 
 #  Quem tirar as últimas peças possíveis ganha o jogo.
 
+from time import sleep
+
 def escolha_modalidade():
 
     print("Bem vindo ao jogo do NIM! Escolha: ")
@@ -31,7 +33,7 @@ def escolha_modalidade():
     return modalidade
 
 def computador_escolhe_jogada(n,m):    
-
+    sleep(1)
     if n > (m+1) and n % (m+1) != 0: # qnd n for maior que o menor múltiplo possível (E NÃO FOR MULTIPLO DIRETO DE M+1)
         
         achou = False
@@ -94,6 +96,7 @@ def partida ():
             peças = peças - computador_escolhe_jogada(peças,m)
             vez = True
 
+        sleep(1)
         print("Agora resta(m)",peças,"peça(s) no tabuleiro.")
         print()
 
